@@ -11,7 +11,7 @@ const Wrapper = styled.main`
 
 export const Main = () => {
     const [data, setData] = useState([]);
-    const [isError, setisError] = useState([]);
+    const [isError, setisError] = useState('');
 
     useEffect(() => {
         const getContact = async () => {
@@ -31,17 +31,27 @@ export const Main = () => {
         getContact()
         
     },[]);
-  
+
+    const DataStr = (str) => {
+        let parms = str.split(/[\.\-\/]/);
+        let yyyy = parseInt(parms[0],10);
+        let mm   = parseInt(parms[1],10);
+        let dd   = parseInt(parms[2],10);
+        let date = new Date(yyyy/mm-1/dd);
+        const a = [yyyy, mm, dd];
+        return a[2] + '/' + a[1] + '/' + a[0];
+    }
 
     return (
         <Container>
             <Wrapper>
                 {data.map(c => {
                 let img = c.picture.large;
+                
                 const dataInfo = {
                     name: [c.name.first, c.name.last],
                     email: c.email,
-                    birthday: c.dob.date,
+                    birthday: () => DataStr(c.dob.date),
                     location: [c.location.country, c.location.street.name],
                     phone: c.phone,
                     login: c.login.username

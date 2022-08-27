@@ -69,7 +69,9 @@ const ListItem = styled.li`
     background-position-y: -48px
 `;
 const CardInf = styled.div`
-    color: var(--color-span)
+    color: var(--color-span);
+    font-size: var(--fs-md);
+    text-transform: capitalize;
 `
 
 export const Card = ({img, ...dataInfo}) => {
