@@ -20,12 +20,15 @@
 body[data-theme='light']{
   --color-bg: #7f8389;
   --color-text: #2c2e31;
+  --color-span: #ffffff;
   /* --shadow: rgba(69, 76, 83, 0.2) 8px 8px 24px; */
 }
 
 body[data-theme='dark']{
   --color-bg: #2c2e31;
   --color-text: #ffffff;
+  --color-span: #111112;
+  
   /* --shadow: rgba(255, 255, 255, 0.2) 0 0 8px; */
 }
 

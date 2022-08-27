@@ -68,6 +68,9 @@ const ListItem = styled.li`
     transition: all .25s ease-out;
     background-position-y: -48px
 `;
+const CardInf = styled.div`
+    color: var(--color-span)
+`
 
 export const Card = ({img, ...dataInfo}) => {
     let step = 68;
@@ -87,7 +90,6 @@ export const Card = ({img, ...dataInfo}) => {
             }
         }
     }
-    console.log(inf)
 
     return (
         <Wrapper>
@@ -96,18 +98,14 @@ export const Card = ({img, ...dataInfo}) => {
                     <CardImg src={img} alt={dataInfo.name}/>
                 </CardImgWr>
             </CardImgCover>
-            
-
-            <div>
-              {Array.isArray(inf) 
+            {Array.isArray(inf) 
               ? 
-              <div>
-<span style={{marginRight: '15px'}}>{inf[0]}</span> 
-<span>{inf[1]}</span>
-              </div>
+              <CardInf>
+                <span style={{marginRight: '15px'}}>{inf[0]}</span> 
+                <span>{inf[1]}</span>
+              </CardInf>
               : 
-              inf}
-            </div>
+              <CardInf>{inf}</CardInf>}
             <List>
                 {Object.keys(dataInfo).map(c => {
                     step -= 68;
