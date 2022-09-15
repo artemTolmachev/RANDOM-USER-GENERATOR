@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 const CardInf = styled.div`
     color: var(--color-span);
-    font-size: var(--fs-md);
+    // font-size: var(--fs-md);
+    font-size: 10px;
     font-weight: var(--fw-light);
     text-align: center;
     text-transform: capitalize;
@@ -26,7 +27,7 @@ export const CardList = ({ NAME = [], inf }) => {
                             </span>
                         </div>
                         :
-                        <div>
+                        <div >
                             {
                                 (!Array.isArray(inf))
                                     ?

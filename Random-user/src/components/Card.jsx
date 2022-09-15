@@ -14,7 +14,7 @@ const Wrapper = styled.div`
     margin: 0 auto;
 
     max-width: 730px;
-    height: 500px;
+ 
 
     background-color: var(--color-text);
     border-radius: var(--radii);
@@ -64,11 +64,12 @@ const CardText = styled.p`
     color: var(--color-card-text);
     font-size: var(--fs-base);
     text-align: center;
-    line-hite: 1.2rem;
+    line-height: 1.2rem;
 `;
 
 const List = styled.ul`
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 0;
     margin: 0;
@@ -94,7 +95,27 @@ const CardInf = styled.div`
     text-transform: capitalize;
 `
 
+const CardButton = styled.button`
+    padding: 7px 30px;
+    border-radius: 8px;
+    border: none;
+    background-color:  #6e9b39;
 
+    line-height: 30px;
+    font-size: var(--fs-base);
+    color: white;
+    cursor: pointer;
+    &:active{
+        background-color: #88e021;
+    }
+`
+
+const CardButtonWrapper = styled.div`
+    margin-top: 30px;
+    text-align: center;
+
+    
+`
 
 export const Card = () => {
     const obgLi = document.querySelectorAll('li');
@@ -132,8 +153,8 @@ export const Card = () => {
         getContact();
         refreshActiveClass();
     }
-  
-   
+
+
 
     function handler(e) {
         const TARGET = e.currentTarget.getAttribute('data');
@@ -151,33 +172,33 @@ export const Card = () => {
         }
     }
 
-        useEffect(() => {
-            postData()
-        }, []);
+    useEffect(() => {
+        postData()
+    }, []);
 
-        function refreshActiveClass(e) {
-            for (let k = 0; k < obgLi.length; k++) {
-                if (obgLi[k].classList.contains('active') && obgLi[k].getAttribute('data') !== 'NAME'){
-                    for (let i = 0; i < obgLi.length; i++) {
-                        obgLi[i].classList.remove('active');
-                        if(obgLi[i].getAttribute('data') === 'NAME'){
-                            obgLi[i].classList.add('active')
-                        }
-                    } 
+    function refreshActiveClass(e) {
+        for (let k = 0; k < obgLi.length; k++) {
+            if (obgLi[k].classList.contains('active') && obgLi[k].getAttribute('data') !== 'NAME') {
+                for (let i = 0; i < obgLi.length; i++) {
+                    obgLi[i].classList.remove('active');
+                    if (obgLi[i].getAttribute('data') === 'NAME') {
+                        obgLi[i].classList.add('active')
+                    }
                 }
             }
         }
+    }
 
     return (
         <Wrapper>
-            < button onClick = {postData} > test </button>
+
             <CardImgCover>
                 <CardImgWr>
                     {data.map(m => <CardImg key={m} src={m.picture.large} />)}
                 </CardImgWr>
             </CardImgCover>
             <CardText>{CARD_TEXT[text]}</CardText>
-            <CardList {...dataInfo[0]} inf={inf}/>
+            <CardList {...dataInfo[0]} inf={inf} />
             <List>
                 {Object.keys(TEXT_ITEM).map(c => {
                     step -= 68;
@@ -191,6 +212,10 @@ export const Card = () => {
                     )
                 })}
             </List>
+            <CardButtonWrapper>
+                <CardButton onClick={postData}>NEXT</CardButton>
+            </CardButtonWrapper>
+            
         </Wrapper>
     );
 };
