@@ -9,7 +9,7 @@
 
 :root{
   --family: 'Ubuntu', sans-serif;
-  --fs-base: 18px;
+  --fs-base: 24px;
   --fs-sm: 14px;
   --fs-md: 38px;
   --fw-light: 300;
@@ -22,6 +22,7 @@ body[data-theme='light']{
   --color-bg: #7f8389;
   --color-text: #2c2e31;
   --color-span: #ffffff;
+  --color-card-text: #858c95;
  
   /* --shadow: rgba(69, 76, 83, 0.2) 8px 8px 24px; */
 }
@@ -29,12 +30,14 @@ body[data-theme='light']{
 body[data-theme='dark']{
   --color-bg: #2c2e31;
   --color-text: #ffffff;
-  --color-span: #111112;
+  --color-span: #2c2e31;
+  --color-card-text: #858c95;
   
   /* --shadow: rgba(255, 255, 255, 0.2) 0 0 8px; */
 }
 
 body {
+  margin: 0;
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--family);

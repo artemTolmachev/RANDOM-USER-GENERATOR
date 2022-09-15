@@ -1,13 +1,18 @@
-import { useState } from 'react'; 
-import {HomePage} from './pages/HomePage';
+import { Header } from './components/Header';
+import {Main} from './components/Main';
+import styled from 'styled-components';
+
+const ManeSaction = styled.div`
+  padding: 2rem 0;
+`
 
 
 function App() {
-  
   return (
-    <>
-      <HomePage></HomePage>
-    </>
+    <ManeSaction>
+       <Header/>
+      <Main/>
+    </ManeSaction>
   );
 
 }
