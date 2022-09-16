@@ -1,12 +1,23 @@
 import styled from 'styled-components';
 
+const CardInfInner = styled.div`
+    word-wrap: break-word;
+`
+
 const CardInf = styled.div`
-    color: var(--color-span);
-    // font-size: var(--fs-md);
-    font-size: 10px;
-    font-weight: var(--fw-light);
+    height: 60px;
     text-align: center;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-light);
     text-transform: capitalize;
+    color: #27272b;
+    font-weight: 500;
+
+    @media(min-width: 768px){
+        font-size: var(--fs-md);
+        font-weight: 300;
+    }
+
 `
 
 
@@ -27,7 +38,7 @@ export const CardList = ({ NAME = [], inf }) => {
                             </span>
                         </div>
                         :
-                        <div >
+                        <CardInfInner>
                             {
                                 (!Array.isArray(inf))
                                     ?
@@ -44,7 +55,7 @@ export const CardList = ({ NAME = [], inf }) => {
                                         </span>
                                     </div>
                             }
-                        </div>
+                        </CardInfInner>
                 }
             </CardInf>
         </>

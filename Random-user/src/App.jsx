@@ -3,6 +3,8 @@ import {Main} from './components/Main';
 import styled from 'styled-components';
 
 const ManeSaction = styled.div`
+  position: relative;
+  z-index:9;
   padding: 2rem 0;
 `
 

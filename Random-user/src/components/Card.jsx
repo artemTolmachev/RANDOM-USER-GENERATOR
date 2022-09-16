@@ -10,16 +10,24 @@ import { CARD_TEXT } from '../constans';
 
 const Wrapper = styled.div`
     position: relative;
-    padding: 2rem 0;
+    padding: 2rem;
     margin: 0 auto;
 
-    max-width: 730px;
+    max-width: 360px;
  
 
-    background-color: var(--color-text);
+    // background-color: var(--color-text);
     border-radius: var(--radii);
     color: black;
     z-index: 0;
+
+    @media(min-width: 768px){
+        max-width: 750px;
+    }
+
+    @media(min-width: 1024px){
+        
+    }
 `;
 
 
@@ -81,11 +89,16 @@ const ListItem = styled.li`
     display: block;
     width: 40px;
     height: 48px;
-    margin: 20px;
+    margin: 10px;
     background-image: url(https://randomuser.me/img/card_icons.png);
     background-size: 378px;
     transition: all .25s ease-out;
-    background-position-y: -48px
+    background-position-y: -48px;
+
+    @media(min-width: 1024px){
+        margin: 20px;
+    }
+
 `;
 const CardInf = styled.div`
     color: var(--color-span);

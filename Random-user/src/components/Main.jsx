@@ -5,7 +5,14 @@ import { Card } from '../components/Card';
 
 
 const Wrapper = styled.main`
-    padding-top: 3rem;
+    padding-top: 1rem;
+
+    @media(min-width: 400px){
+        padding-top: 2rem;
+    }
+    @media(min-width: 768px){
+        padding-top: 3rem;
+    }
 `;
 
 export const Main = () => {
