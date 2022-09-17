@@ -100,19 +100,12 @@ const ListItem = styled.li`
     }
 
 `;
-const CardInf = styled.div`
-    color: var(--color-span);
-    font-size: var(--fs-md);
-    font-weight: var(--fw-light);
-    text-align: center;
-    text-transform: capitalize;
-`
 
 const CardButton = styled.button`
     padding: 7px 30px;
     border-radius: 8px;
     border: none;
-    background-color:  #6e9b39;
+    background-color:  #709346b0;
 
     line-height: 30px;
     font-size: var(--fs-base);
@@ -228,7 +221,6 @@ export const Card = () => {
             <CardButtonWrapper>
                 <CardButton onClick={postData}>NEXT</CardButton>
             </CardButtonWrapper>
-            
         </Wrapper>
     );
 };
